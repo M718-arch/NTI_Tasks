@@ -12,11 +12,22 @@ if (!$conn) {
 
 if (isset($_POST["register"])) {
 
+    $fullname = $_POST["fullname"];
     $username = $_POST["username"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $gender = $_POST["gender"];
+    $dob = $_POST["dob"];
     $password = $_POST["password"];
 
-    $sql = "INSERT INTO users (username, password)
-            VALUES ('$username', '$password')";
+    $sql = "INSERT INTO users (fullname, username, email, phone, gender, dob, password)
+            VALUES ('$fullname',
+    '$username',
+    '$email',
+    '$phone',
+    '$gender',
+    '$dob',
+    '$password')";
 
     mysqli_query($conn, $sql);
 
